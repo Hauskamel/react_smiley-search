@@ -1,23 +1,22 @@
+import {useState} from "react";
 import Smiley from "./components/smiley.jsx";
 
-function App(smileysData) {
+function App(smileys) {
+    console.log(smileys.data.length)
 
-  console.log(smileysData);
+    return (
+        <>
+            <div className="search_wrapper">
+                <input className="search_field"/>
+                <ul>
+                    {smileys.data.map((smiley, index) => (
+                        <Smiley key={index} name={smiley.name} />
+                    ))}
+                </ul>
+            </div>
 
-
-  return (
-    <>
-      <div className="search_wrapper">
-        <input className="search_field"/>
-        <ul>
-          <Smiley />
-          <Smiley />
-          <Smiley name={} />
-        </ul>
-      </div>
-
-    </>
-  )
+        </>
+    )
 }
 
 export default App

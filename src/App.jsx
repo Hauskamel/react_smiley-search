@@ -1,21 +1,18 @@
-
+import Smiley from "./components/smiley.jsx";
 
 function App(smileysData) {
 
-  console.log(smileysData)
+  console.log(smileysData);
 
-  smileysData.forEach(smiley => {
-
-  })
 
   return (
     <>
       <div className="search_wrapper">
         <input className="search_field"/>
         <ul>
-          <li>Smile‚y: {}</li>
-          <li>Smiley: Name of Smiles</li>
-          <li>Smiley: Name of Smiles</li>
+          <Smiley />
+          <Smiley />
+          <Smiley name={} />
         </ul>
       </div>
 

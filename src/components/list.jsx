@@ -3,7 +3,9 @@ import Smiley from "./smiley.jsx";
 
 function List(smileys) {
 
-    console.log({smileys})
+    const filteredList = smileys.data.data.filter(s => s.includes(smileys.searchWord))
+
+    console.log(filteredList)
 
     return (
         <>

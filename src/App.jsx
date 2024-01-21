@@ -9,8 +9,15 @@ function App(smileys) {
     return (
         <>
             <div className="search_wrapper">
-                <SmileySearch value={searchWord} setValue={setSearchWord}/>
-                <List data={smileys} />
+                <SmileySearch
+                    value={searchWord}
+                    setValue={setSearchWord}
+                />
+
+                <List
+                    data={smileys}
+                    searchWord={searchWord}
+                />
             </div>
 
         </>

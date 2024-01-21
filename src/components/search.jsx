@@ -1,13 +1,16 @@
 
-function SmileySearch () {
+function SmileySearch (props) {
+
+    console.log(props.value)
 
     function handleChange (event) {
-        console.log(event.target.value)
+        return props.setValue(event.target.value)
     }
 
     return (
         <>
             <input
+                value={props.value}
                 className="search-input"
                 onChange={handleChange}
             />

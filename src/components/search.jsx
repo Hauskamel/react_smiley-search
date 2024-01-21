@@ -1,10 +1,8 @@
 
 function SmileySearch (props) {
 
-    console.log(props.value)
-
     function handleChange (event) {
-        return props.setValue(event.target.value)
+        props.setValue(event.target.value)
     }
 
     return (

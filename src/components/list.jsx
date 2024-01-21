@@ -2,16 +2,26 @@ import Smiley from "./smiley.jsx";
 
 
 function List(smileys) {
+    let searchWord = smileys.searchWord;
 
-    const filteredList = smileys.data.data.filter(s => s.includes(smileys.searchWord))
-    console.log(filteredList)
+    const filteredSmileys = smileys.data.data.filter(smiley => {
+        const searchWordArr = searchWord.split("");
+        const smileyNameArr = smiley.name.split("");
+
+        return searchWordArr.every((letter, index) => {
+            return letter === smileyNameArr[index]
+        })
+    })
+
 
     return (
         <>
             <ul>
-                {smileys.data.data.map((smiley, index) => (
-                    <Smiley key={index} char={smiley.char} name={smiley.name}/>
-                ))}
+                {
+                    filteredSmileys.map((smiley, index) => (
+                        <Smiley key={index} char={smiley.char} name={smiley.name}/>
+                    ))
+                }
             </ul>
         </>
     )

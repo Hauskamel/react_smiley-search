@@ -1,18 +1,16 @@
 import {useState} from "react";
-import Smiley from "./components/smiley.jsx";
+import SmileySearch from "./components/search.jsx";
+import List from "./components/list.jsx";
 
 function App(smileys) {
-    console.log(smileys.data.length)
-    console.log({smileys})
+
+    const [searchWord, setSearchWord] = useState("");
+
     return (
         <>
             <div className="search_wrapper">
-                <input className="search_field"/>
-                <ul>
-                    {smileys.data.map((smiley, index) => (
-                        <Smiley key={index} char={smiley.char} name={smiley.name} />
-                    ))}
-                </ul>
+                <SmileySearch value={searchWord} setValue={setSearchWord}/>
+                <List data={smileys} />
             </div>
 
         </>

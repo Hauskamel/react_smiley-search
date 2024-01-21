@@ -2,7 +2,10 @@ function Smiley (smiley) {
 
     return (
         <>
-            <h1>{smiley.name}</h1>
+            <div className="smiley-wrapper">
+                <div>{smiley.char}</div>
+                <h1 className="smiley-name">{smiley.name}</h1>
+            </div>
         </>
     )
 
